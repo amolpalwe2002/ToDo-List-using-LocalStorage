@@ -28,6 +28,7 @@ function App() {
   useEffect(() => {
     inputRef.current.focus()
 
+    if(!localStorage) return
     localStorage.setItem('todos', JSON.stringify(todos))
     console.log(JSON.parse(localStorage.getItem('todos')))
   }, [todos])
